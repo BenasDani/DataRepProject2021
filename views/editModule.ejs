@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <link rel='stylesheet' href='/styles/design.css'>
+</head>
+<h1>Edit Module</h1>
+
+<body>
+
+    <% if (errors !=undefined) {%>
+        <ul>
+            <% errors.forEach((error)=>{%>
+                <li style="color:Red">
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+            <form action="/module/edit/:mid" method='POST'>
+                <label>Module ID:</label><br>
+                <input type="text" name="mid" value="<%= module.mid %>" readonly><br>
+                <label>Name:</label><br>
+                <input type="text" name="name" value="<%= module.name %>"><br>
+                <label>Credits:</label><br>
+                <input type="number" name="credits" value="<%= module.credits %>"><br>
+                <input type="submit" value="Edit">
+
+            </form><br>
+            <a href="/">Home </a>
+</body>

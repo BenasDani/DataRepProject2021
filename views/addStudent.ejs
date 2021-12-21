@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <link rel='stylesheet' href='/styles/design.css'>
+</head>
+
+<body>
+    <h2>Add Student</h2>
+    
+    <% if (errors !=undefined) {%>
+        <ul>
+            <% errors.forEach((error)=>{%>
+                <li style="color:rgba(0, 255, 106, 0.781)">
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+    
+                    <form action="/addStudent" method='POST'>
+                        <label>Student ID:</label><br>
+                        <input type="text" name="sid" value=""><br>
+                        <label>Name:</label><br>
+                        <input type="text" name="name" value=""><br>
+                        <label>GPA:</label><br>
+                        <input type="number" name="gpa" value="" step=".1"><br>
+                        <input type="submit" value="Add">
+                    </form><br>
+
+                    <a href="/">Home Page </a>
+
+</body>
